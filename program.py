@@ -84,8 +84,8 @@ train_n.drop('Daily_transactions',axis=1,inplace=True)
 test_n.drop('Daily_transactions',axis=1,inplace=True)
 #这个特征test中没有，为保证一致性去除
 
-train_n['dcoilwtico'].ffill()
-test_n['dcoilwtico'].ffill()
+train_n['dcoilwtico'].ffill(inplace=True)
+test_n['dcoilwtico'].ffill(inplace=True)
 #merge中只对first的油价合并，而日期是一定的，故按上一个值填充
 
 train_n.fillna('no',inplace=True)
